@@ -30,9 +30,10 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(it, "Grey Theme", Snackbar.LENGTH_LONG)
                 .setDuration(3500)
                 .setTextColor(Color.GRAY)
-//                .setAction("Change") {
-//                    application.setTheme(R.style.DarkTheme)
-//                }
+                .setAction("Change") {
+                    application.setTheme(R.style.DarkTheme)
+                    recreate()
+                }
                 .show()
         }
 
@@ -41,9 +42,10 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(it, "Default Theme", Snackbar.LENGTH_LONG)
                 .setDuration(3500)
                 .setTextColor(Color.MAGENTA)
-//                .setAction("Change") {
-//                    application.setTheme(AppTheme)
-//                }
+                .setAction("Change") {
+                    application.setTheme(R.style.AppTheme)
+                    recreate()
+                }
                 .show()
         }
 
