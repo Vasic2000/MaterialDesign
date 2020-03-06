@@ -1,5 +1,6 @@
 package cz.vasic2000.materialdesign
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -25,17 +26,36 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+        fab.setOnClickListener {
+            Snackbar.make(it, "Grey Theme", Snackbar.LENGTH_LONG)
+                .setDuration(3500)
+                .setTextColor(Color.GRAY)
+                .setAction("Change") {
+                    application.setTheme(R.style.DarkTheme)
+                    recreate()
+                }
+                .show()
         }
+
+        val fab2: FloatingActionButton = findViewById(R.id.fab2)
+        fab2.setOnClickListener {
+            Snackbar.make(it, "Default Theme", Snackbar.LENGTH_LONG)
+                .setDuration(3500)
+                .setTextColor(Color.MAGENTA)
+                .setAction("Change") {
+                    application.setTheme(R.style.AppTheme)
+                    recreate()
+                }
+                .show()
+        }
+
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow), drawerLayout)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_changetheme), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }

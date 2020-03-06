@@ -12,4 +12,9 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="home_second">Home Second</string>
+    <string name="themeColorDark">Violet</string>
+    <string name="themeSelect">Поменять тему</string>
+    <string name="themeDark">Dark</string>
+    <string name="bottm_sheet">Bottm Sheet</string>
+    <string name="some_information">Some information</string>
 </resources>

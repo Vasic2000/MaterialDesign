@@ -36,8 +36,8 @@
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="cz.vasic2000.materialdesign.ui.slideshow.SlideshowFragment"
+        android:id="@+id/nav_changetheme"
+        android:name="cz.vasic2000.materialdesign.ui.changeTheme.ChangeThemeFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_changetheme" />
 </navigation>

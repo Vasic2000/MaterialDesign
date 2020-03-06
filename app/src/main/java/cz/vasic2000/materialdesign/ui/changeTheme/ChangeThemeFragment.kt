@@ -1,4 +1,4 @@
-package cz.vasic2000.materialdesign.ui.gallery
+package cz.vasic2000.materialdesign.ui.changeTheme
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import cz.vasic2000.materialdesign.R
 
-class GalleryFragment : Fragment() {
+class ChangeThemeFragment : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
+    private lateinit var changeThemeModel: ChangeThemeModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-                ViewModelProvider(this).get(GalleryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
-        val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
+        changeThemeModel =
+                ViewModelProvider(this).get(ChangeThemeModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_changetheme, container, false)
+        val textView: TextView = root.findViewById(R.id.text_theme_change)
+        changeThemeModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
